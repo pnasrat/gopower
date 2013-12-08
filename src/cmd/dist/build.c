@@ -31,7 +31,7 @@ static void copy(char*, char*, int);
 static char *findgoversion(void);
 
 // The known architecture letters.
-static char *gochars = "568";
+static char *gochars = "568q";
 
 // The known architectures.
 static char *okgoarch[] = {
@@ -39,6 +39,7 @@ static char *okgoarch[] = {
 	"arm",
 	"amd64",
 	"386",
+	"ppc",
 };
 
 // The known operating systems.
@@ -146,9 +147,9 @@ init(void)
 static void
 rmworkdir(void)
 {
-	if(vflag > 1)
+	//if(vflag > 1)
 		xprintf("rm -rf %s\n", workdir);
-	xremoveall(workdir);
+	//xremoveall(workdir);
 }
 
 // Remove trailing spaces.
@@ -269,6 +270,7 @@ static char *oldtool[] = {
 	"5a", "5c", "5g", "5l",
 	"6a", "6c", "6g", "6l",
 	"8a", "8c", "8g", "8l",
+	"qa", "qc", "qg", "ql",
 	"6cov",
 	"6nm",
 	"6prof",
@@ -387,7 +389,7 @@ static char *proto_gccargs[] = {
 	"-Werror",
 	"-fno-common",
 	"-ggdb",
-	"-O2",
+	"-O0", // "-O2",
 };
 
 static Vec gccargs;
@@ -453,6 +455,12 @@ static struct {
 		"../cc/pgen.c",
 		"../cc/pswt.c",
 		"../8l/enam.c",
+		"$GOROOT/pkg/obj/$GOOS_$GOARCH/libcc.a",
+	}},
+	{"cmd/qc", {
+		"../cc/pgen.c",
+		"../cc/pswt.c",
+		"../ql/enam.c",
 		"$GOROOT/pkg/obj/$GOOS_$GOARCH/libcc.a",
 	}},
 	{"cmd/5g", {
@@ -1082,7 +1090,7 @@ static char *buildorder[] = {
 
 	"cmd/cc",  // must be before c
 	"cmd/gc",  // must be before g
-	"cmd/%sl",  // must be before a, c, g
+	//"cmd/%sl",  // must be before a, c, g
 	"cmd/%sa",
 	"cmd/%sc",
 	"cmd/%sg",

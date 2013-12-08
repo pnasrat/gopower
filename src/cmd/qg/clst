@@ -1,0 +1,142 @@
+
+    1	Aconv [list.c:98]
+    2		__builtin_va_arg
+    3		fmtstrcpy
+
+    4	Bconv [list.c:47]
+    5		__builtin_va_arg
+    6		bany [reg.c:167]
+    7		bnum
+    8		strcat
+    9		sprint
+   10		strlen
+
+   11	BtoF [reg.c:1149]
+   12		bitno
+
+   13	BtoR [reg.c:1125]
+   14		bitno
+
+   15	Dconv [list.c:111]
+   16		__builtin_va_arg
+   17		sprint
+
+   18	Nconv [list.c:224]
+   19		__builtin_va_arg
+   20		sprint
+
+   21	Pconv [list.c:73]
+   22		__builtin_va_arg
+   23		sprint
+   24		fmtstrcpy
+
+   25	Sconv [list.c:177]
+   26		__builtin_va_arg
+
+   27	access [cgen.c:259]
+
+   28	copyau [peep.c:463]
+
+   29	copyprop [peep.c:511]
+   30		copyas
+   31		copy1 [peep.c:528]
+
+   32	dodiv [ggen.c:522]
+   33		optoas
+   34		regalloc [gsubr.c:300]
+   35			diag
+   36			nodreg [gsubr.c:279]
+   37		savex [ggen.c:578]
+   38			memset
+   39			nodreg
+   40			samereg [ggen.c:498]
+   41			regalloc [see line 34]
+   42			gmove [gsubr.c:577]
+   43				fop [gsubr.c:564]
+   44					nodreg
+   45					regalloc [see line 34]
+   46					gopcode [gsubr.c:938]
+   47						gmove <<< recursive >>>
+   48					gmove <<< recursive >>>
+   49					regfree [gsubr.c:376]
+   50		cgen
+   51		regfree
+   52		nodconst [gsubr.c:265]
+   53		gmove [see line 42]
+   54		gins [gsubr.c:924]
+   55			nextpc [gsubr.c:164]
+   56				alloc
+   57			naddr [gsubr.c:463]
+   58			print
+   59		restx [ggen.c:599]
+   60			gmove [see line 42]
+   61			regfree
+
+   62	exreg [gsubr.c:1252]
+
+   63	goisblank [ggen.c:55]
+   64		allocparams
+   65		newplist
+   66		nodconst
+   67		gins [see line 54]
+   68		afunclit
+   69		ginit
+   70		genlist
+   71		gjmp
+   72		patch [gsubr.c:1187]
+
+   73	imaxabs [cgen.c:299]
+
+   74	imaxdiv [cgen.c:302]
+
+   75	isconst [cgen.c:964]
+   76		mpgetfix
+   77		structfirst
+   78		getoutarg
+
+   79	isfixedarray [cgen.c:959]
+
+   80	lseek [cgen.c:305]
+
+   81	lseek64 [cgen.c:313]
+
+   82	pread [cgen.c:356]
+   83		malloc
+
+   84	rcmp [reg.c:53]
+
+   85	regzer [peep.c:345]
+
+   86	samaddr [gsubr.c:918]
+
+   87	sconst [gsubr.c:1222]
+
+   88	stkof [cgen.c:938]
+
+   89	strtoimax [cgen.c:306]
+
+   90	strtoumax [cgen.c:310]
+
+   91	subprop [peep.c:388]
+   92		regtyp [peep.c:360]
+   93		uniqp [peep.c:309]
+   94		uniqs [peep.c:325]
+   95			copysub [peep.c:467]
+   96			copysub1
+   97			print
+
+   98	uconst [gsubr.c:1237]
+
+   99	vconst [gsubr.c:241]
+  100		regaalloc [gsubr.c:417]
+  101			align [gobj.c:680]
+  102				diag
+  103			maxround [gobj.c:747]
+  104				xround
+  105		gopcode [see line 46]
+
+  106	wcstoimax [cgen.c:314]
+
+  107	wcstoumax [cgen.c:319]
+
+  108	regcmp [static in ggen.c:1080]

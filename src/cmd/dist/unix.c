@@ -176,7 +176,7 @@ genrun(Buf *b, char *dir, int mode, Vec *argv, int wait)
 		}
 		bwritestr(&cmd, q);
 	}
-	if(vflag > 1)
+	//if(vflag > 1)
 		xprintf("%s\n", bstr(&cmd));
 
 	if(b != nil) {

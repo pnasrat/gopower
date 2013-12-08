@@ -45,6 +45,7 @@ enum
 	SELFSECT,
 	SNOPTRDATA,
 	SDATA,
+	SDATA1,
 	SMACHO,	/* Mach-O __nl_symbol_ptr */
 	SMACHOGOT,
 	SWINDOWS,
@@ -52,13 +53,19 @@ enum
 	SNOPTRBSS,
 
 	SXREF,
+	SLEAF,
 	SMACHODYNSTR,
 	SMACHODYNSYM,
 	SMACHOINDIRECTPLT,
 	SMACHOINDIRECTGOT,
 	SFILE,
 	SCONST,
+	SUNDEF,
 	SDYNIMPORT,
+	SIMPORT,
+	SEXPORT,
+	SFIXED,
+	SELFDATA,
 
 	SSUB = 1<<8,	/* sub-symbol, linked from parent via ->sub list */
 	

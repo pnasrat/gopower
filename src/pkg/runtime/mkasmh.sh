@@ -15,6 +15,7 @@ case "$GOARCH" in
 386) CC=8c;;
 amd64) CC=6c;;
 arm) CC=5c;;
+ppc) CC=qc;;
 esac
 CC="$GOROOT/bin/tool/$CC"
 export CC

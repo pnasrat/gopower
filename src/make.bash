@@ -122,12 +122,12 @@ echo
 if [ "$GOHOSTARCH" != "$GOARCH" -o "$GOHOSTOS" != "$GOOS" ]; then
 	echo "# Building packages and commands for host, $GOHOSTOS/$GOHOSTARCH."
 	GOOS=$GOHOSTOS GOARCH=$GOHOSTARCH \
-		"$GOTOOLDIR"/go_bootstrap install -gcflags "$GO_GCFLAGS" -ldflags "$GO_LDFLAGS" -v std
+		"$GOTOOLDIR"/go_bootstrap install -v -gcflags "$GO_GCFLAGS" -ldflags "$GO_LDFLAGS" -v std
 	echo
 fi
 
 echo "# Building packages and commands for $GOOS/$GOARCH."
-"$GOTOOLDIR"/go_bootstrap install -gcflags "$GO_GCFLAGS" -ldflags "$GO_LDFLAGS" -v std
+"$GOTOOLDIR"/go_bootstrap install -v -gcflags "$GO_GCFLAGS" -ldflags "$GO_LDFLAGS" -v std
 echo
 
 rm -f "$GOTOOLDIR"/go_bootstrap

@@ -127,6 +127,7 @@ var ptrSizeMap = map[string]int64{
 	"386":   4,
 	"amd64": 8,
 	"arm":   4,
+	"ppc":   4,
 }
 
 var cPrefix string
